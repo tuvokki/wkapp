@@ -45,22 +45,7 @@ window.onload = function() {
     fs.unlinkSync(logfile);
   }
 
-  // addTitlebar("top-titlebar", "top-titlebar.png", "Top Titlebar");
-  // addTitlebar("bottom-titlebar", "bottom-titlebar.png", "Bottom Titlebar");
   addTitlebar("left-titlebar", "left-titlebar.png", "Left Titlebar");
-  // addTitlebar("right-titlebar", "right-titlebar.png", "Right Titlebar");
-
-  // document.getElementById("close-window-button").onclick = function() {
-  //   window.close();
-  // };
-
-  // document.querySelector('#minimize-window-button').onclick = function () {
-  //   gui.Window.get().minimize();
-  // };
-
-  // document.querySelector('#maximize-window-button').onclick = function () {
-  //   gui.Window.get().maximize();
-  // };
 
   document.querySelector('#open-inspector-button').onclick = function () {
     var win = gui.Window.get();
@@ -77,8 +62,13 @@ window.onload = function() {
     document.querySelector('#testspan').innerText = "Test: " + settings.jira.projects;
     get_projects(url, auth).then(function(res) {
       // res is now the result filled with projects
-      console.log('success', res);
-      
+      console.log('success');
+      var projectList = JSON.parse(res);
+      var projects = [];
+      for (var i = projectList.length - 1; i >= 0; i--) {
+        projects.push(projectList[i].key);
+      };
+      document.querySelector('#testspan').innerText = "Done: " + projects;
     }, function(err){
       console.log('error', err);
     });
@@ -86,4 +76,5 @@ window.onload = function() {
 
   updateContentStyle();
   gui.Window.get().show();
+  console.log("Starting ...");
 };
