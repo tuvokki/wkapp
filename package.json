@@ -1,0 +1,40 @@
+{
+  "name": "FramelessWindow",
+  "description": "Frameless window with a form in it.",
+  "version": "0.0.1",
+  "author": "Wouter Roosendaal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tuvokki/wkapp/issues"
+  },
+  "homepage": "https://github.com/tuvokki/wkapp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuvokki/wkapp.git"
+  },
+  "keywords": [
+    "just",
+    "an app",
+    "that",
+    "is"
+  ],
+  "main": "frameless_window.html",
+  "window": {
+    "show": false,
+    "toolbar": false,
+    "frame": false,
+    "position": "center",
+    "width": 360,
+    "height": 300,
+    "max_width": 360,
+    "max_height": 300,
+    "min_width": 360,
+    "min_height": 300
+  },
+  "dependencies": {
+    "request-promise": "^0.4.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
