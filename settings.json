@@ -1,0 +1,27 @@
+{
+  "jira": {
+    "client": {
+      "host": "[yourcompany].atlassian.net",
+      "basic_auth": {
+          "username": "[yourname]",
+          "password": "[yourpass]"
+      }
+    },
+    "projects": ["ABC", "XYZ"],
+    "versions": [
+      {
+            "name":             "15.6",
+            "description":      "R15SP6",
+            "releaseDate":      "2015-08-10",
+            "startDate":        "2015-07-11"
+      },
+      {
+            "name":             "14.9",
+            "description":      "R14SP9",
+            "releaseDate":      "2015-08-10",
+            "startDate":        "2015-07-11"
+      }
+    ]
+ }
+}
+
